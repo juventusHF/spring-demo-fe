@@ -7,6 +7,7 @@ export async function getAllTodos(): Promise<Todo[]> {
         const response = await fetch(BASE_URL);
         if (!response.ok) {
             console.error(`Response status: ${response.status}`);
+            return [];
         }
         return await response.json();
     } catch (error) {
